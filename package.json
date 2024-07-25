@@ -1,0 +1,28 @@
+{
+  "name": "iymia-regist",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "jquery": "^3.7.1",
+    "next": "14.2.5",
+    "owl.carousel": "^2.3.4",
+    "prop-types": "^15.8.1",
+    "react": "^18",
+    "react-animate-on-scroll": "^2.1.9",
+    "react-dom": "^18",
+    "react-owl-carousel3": "^2.2.5",
+    "react-tabs": "^6.0.2",
+    "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
+  }
+}
