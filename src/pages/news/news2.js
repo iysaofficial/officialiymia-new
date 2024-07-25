@@ -47,10 +47,10 @@ const news = () => {
             <p className="card-text col-sm-7">
               Khairunnisa explained that his team presented the application
               concept of the Penthahelix model through the lengger dance as a
-              medium to introduce mina padi. Their work is entitled &quot;Application
-              of the Penta Helix Model using Lengger Dance as a Media for
-              Developing Agricultural Potential Based on Local Wisdom of
-              Minapadi Banyumas Culture&quot;.
+              medium to introduce mina padi. Their work is entitled
+              &quot;Application of the Penta Helix Model using Lengger Dance as
+              a Media for Developing Agricultural Potential Based on Local
+              Wisdom of Minapadi Banyumas Culture&quot;.
             </p>
             <p className="card-text col-sm-7">
               IYMIA is an applied science competition held by the Indonesian
