@@ -22,11 +22,11 @@ export default function Home() {
       </Head>
       <Navbar />
       <MainBanner />
-      <PartnerStyle2 />
       <About/>
       <Category/>
       <Layout/>
       <Process/>
+      <PartnerStyle2 />
       <GoTop/>
       <Footer/>
     </>

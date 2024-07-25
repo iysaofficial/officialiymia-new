@@ -24,6 +24,10 @@
   --warna-tulisan2: #fff;
 }
 
+.swiper-wrapper  {
+  align-items: center ;
+}
+
 body {
   margin: 0;
   padding: 0;
