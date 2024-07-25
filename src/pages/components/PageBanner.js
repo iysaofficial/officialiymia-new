@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const PageBanner = ({
-  pageTitle,
-  homePageUrl,
-  homePageText,
-  activePageText,
+  pageTitle = 'Default Page Title',
+  homePageUrl = '/',
+  homePageText = 'Home',
+  activePageText = 'Current Page',
 }) => {
   return (
     <>
@@ -39,8 +39,8 @@ const PageBanner = ({
             src="/images/shape/shape9.png"
             className="img-fluid img-responsive"
             layout="intrinsic"
-            width={150} // Sesuaikan lebar gambar
-            height={100} // Sesuaikan tinggi gambar
+            width={150}
+            height={100}
             alt="overview"
           />
         </div>
@@ -48,5 +48,4 @@ const PageBanner = ({
     </>
   );
 };
-
 export default PageBanner;
