@@ -6,7 +6,7 @@ const ContactComp = () => {
     <>
       <div className="contact-area ptb-100">
         <div className="container">
-          <div className="section-title">
+          <div className="section-title text-center mb-5">
             <h2>Get in Touch</h2>
             <p>
               Have questions or need more information? Fill out the form below,
