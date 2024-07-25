@@ -19,7 +19,7 @@ export default class process extends Component {
               <div className="video_content">
                 <div className="video">
                   <iframe
-                    width="560"
+                    width="100%"
                     height="315"
                     src="https://www.youtube.com/embed/DCw862udnZo"
                     title="YouTube video player"
@@ -37,7 +37,7 @@ export default class process extends Component {
               <div className="video_content">
                 <div className="video">
                   <iframe
-                    width="560"
+                    width="100%"
                     height="315"
                     src="https://www.youtube.com/embed/YBhdvQ1p5xQ"
                     title="YouTube video player"
@@ -55,7 +55,7 @@ export default class process extends Component {
               <div className="video_content">
                 <div className="video">
                   <iframe
-                    width="560"
+                    width="100%"
                     height="315"
                     src="https://www.youtube.com/embed/KJOATDQofBI?si=kuVM-dqrrJiUndvq"
                     title="YouTube video player"
