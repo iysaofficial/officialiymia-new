@@ -15,7 +15,7 @@ const MainBanner = () => {
                   <span className="sub-title">Coming Soon 2025</span>
                   <h1>International Young Moslem Inventor Award</h1>
                   <Link href="" legacyBehavior>
-                    <a className="default-btn">Coming Soon 2025</a>
+                    <a href="/registration/homeregist" target="_blank" className="default-btn">Registration</a>
                   </Link>
                   {/* <Link href="/registration/homeregist" legacyBehavior>
                     <a className="default-btn">Registration Link</a>

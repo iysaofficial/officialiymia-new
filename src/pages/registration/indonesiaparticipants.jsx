@@ -6,226 +6,64 @@ import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-function IndoensiaParticipants() {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [price, setPrice] = useState("");
-  const [paymentUrl, setPaymentUrl] = useState("");
-  const [uniqueId, setUniqueId] = useState(""); // Mengatur uniqueId ke state
-  const [selectedNamaLengkap, setSelectedNamaLengkap] = useState("");
-  const [selectEmailKetua, setselectEmailKetua] = useState(""); // Menambah state untuk Email Ketua team
-  const [phone, setPhone] = useState(""); // Menambah state untuk phone (Nomor WhatsApp)
-  const [selectNameSupervisor, setselectNameSupervisor] = useState(""); // Menambah state untuk Name Supervisor team
-  const [selectPhoneSupervisor, setSelectPhoneSupervisor] = useState(""); // Menambah state untuk phone (Nomor WhatsApp)
-  const [selectEmailSupervisor, setselectEmailSupervisor] = useState(""); // Menambah state untuk Email Supervisor team
-  const adminFee = 4500; // Biaya admin tetap
+export default function Internationalparticipants() {
+  const [selectedMaxNamaLengkap, setselectedMaxNamaLengkap] = useState("");
+  const maxNameChars = 180; // batasan maksimal karakter
+  const [selectedMaxProject, setselectedMaxProject] = useState("");
+  const maxProjectChars = 160; // batasan maksimal karakter
 
-  const generateUniqueId = () => {
-    const timestamp = new Date().getTime();
-    return `IYMIA${timestamp}`;
-  };
-
-  const generateFormData = (
-    selectedCategory,
-    price,
-    uniqueId,
-    selectedNamaLengkap,
-    phone
-  ) => {
-    const formattedPrice = Math.max(Math.floor(price), 1);
-    const totalPrice = formattedPrice + adminFee;
-
-    // Memecah nama lengkap menjadi array berdasarkan baris
-    const names = selectedNamaLengkap.split("\n");
-
-    // Mengambil nama pertama sebagai Nama Ketua
-    const ketua = names.length > 0 ? names[0] : "";
-
-    return {
-      item_details: [
-        {
-          id: uniqueId,
-          name: selectedCategory,
-          price: formattedPrice.toString(),
-          quantity: "1",
-        },
-        {
-          id: `${uniqueId}-admin`,
-          name: "Admin Fee",
-          price: adminFee.toString(),
-          quantity: "1",
-        },
-      ],
-      customer_details: {
-        first_name: ketua, // Menggunakan nama pertama sebagai Nama Ketua
-        phone: phone,
-        notes: "Thankyou",
-      },
-      transaction_details: {
-        order_id: uniqueId,
-        gross_amount: totalPrice.toString(), // Menggunakan total harga
-      },
-    };
-  };
-
-  const generatePaymentLink = async () => {
-    if (
-      selectedCategory !== "IYMIA Online Competition" &&
-      selectedCategory !== "IYMIA Offline Competition" &&
-      selectedCategory !== "IYMIA Offline + Excursion"
-    ) {
-      alert("Anda harus memilih salah satu kategori.");
-      return;
-    }
-
-    if (!selectedNamaLengkap) {
-      alert("Nama lengkap harus diisi.");
-      return;
-    } else if (selectedNamaLengkap.length > 180) {
-      alert("Maksimal Penulisan Nama Ketua dan Anggota 180 karakter");
-    }
-
-    if (!phone) {
-      alert(
-        "Nomor telepon ketua tim harus diisi untuk membuat tautan pembayaran."
-      );
-      return; // Menghentikan eksekusi fungsi jika phone belum diisi
-    } else if (phone.length < 5 || phone.length > 20) {
-      alert(
-        "Nomor telepon harus memiliki panjang antara 5 hingga 20 karakter."
-      );
-      return; // Menghentikan eksekusi fungsi jika panjang phone tidak sesuai
-    }
-
-    if (!selectEmailKetua) {
-      alert("Email Ketua harus diisi.");
-      return;
-    }
-
-    if (!selectNameSupervisor) {
-      alert("Nama Pembimbing harus diisi.");
-      return;
-    }
-
-    if (!selectPhoneSupervisor) {
-      alert(
-        "Nomor telepon Pembimbing tim harus diisi untuk membuat tautan pembayaran."
-      );
-      return; // Menghentikan eksekusi fungsi jika phone belum diisi
-    } else if (
-      selectPhoneSupervisor.length < 5 ||
-      selectPhoneSupervisor.length > 20
-    ) {
-      alert(
-        "Nomor telepon pembimbing harus memiliki panjang antara 5 hingga 20 karakter."
-      );
-      return; // Menghentikan eksekusi fungsi jika panjang phone tidak sesuai
-    }
-
-    if (!selectEmailSupervisor) {
-      alert("Email Pembimbing harus diisi.");
-      return;
-    }
-
-    const newUniqueId = generateUniqueId(); // Menghasilkan uniqueId baru
-    setUniqueId(newUniqueId); // Menyimpan uniqueId baru ke state
-
-    const formData = generateFormData(
-      selectedCategory,
-      price,
-      newUniqueId,
-      selectedNamaLengkap,
-      phone
-    );
-
-    const secret = process.env.NEXT_PUBLIC_SECRET;
-    const encodedSecret = Buffer.from(secret).toString("base64");
-    const basicAuth = `Basic ${encodedSecret}`;
-
-    const apiUrl = `${process.env.NEXT_PUBLIC_API}/v1/payment-links`;
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: basicAuth,
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const responseData = await response.json();
-      console.log("Response Data:", responseData);
-      setPaymentUrl(responseData.payment_url);
-
-      const buttonInput = document.querySelector("form .buttonindo input");
-      buttonInput.style.display = "block";
-    } catch (error) {
-      console.error("Error saat mengirim permintaan:", error);
+  const handleInputNameChange = (e) => {
+    const { value } = e.target;
+    if (value.length <= maxNameChars) {
+      setselectedMaxNamaLengkap(value);
     }
   };
 
-  useEffect(() => {
-    if (selectedCategory === "IYMIA Online Competition") {
-      setPrice("100000");
-    } else if (selectedCategory === "IYMIA Offline Competition") {
-      setPrice("200000");
-    } else if (selectedCategory === "IYMIA Offline + Excursion") {
-      setPrice("500000");
-    } else {
-      setPrice("");
+  const handleInputProjectChange = (e) => {
+    const { value } = e.target;
+    if (value.length <= maxProjectChars) {
+      setselectedMaxProject(value);
     }
-  }, [selectedCategory]);
-
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
   };
 
   useEffect(() => {
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbwv7p3NWspDCUb-UdLYSJs8wDBO425chOnXH0Qo67HFnLWawz1rhezw53UGhdL7FLQaaw/exec";
 
-      const form = document.forms["regist-form"];
-      var buttonCounter = 0;
-      if (form) {
-        const handleSubmit = async (e) => {
-          e.preventDefault();
-  
-          // Pengecekan paymentUrl di dalam handleSubmit
-          if (!paymentUrl) {
-            alert("Invoice berhasil di buat!! silahkan tekan tombol 'KIRIM' di akhir formulir pendaftaran");
-            return; // Menghentikan pengiriman jika URL pembayaran belum ada
+    const form = document.forms["regist-form"];
+    var buttonCounter = 0;
+
+    if (form) {
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (buttonCounter == 0) {
+          try {
+            buttonCounter++;
+            await fetch(scriptURL, { method: "POST", body: new FormData(form) });
+            // Setelah berhasil mengirim data, arahkan pengguna ke halaman lain
+            window.location.href = "/registration/homeregist"; // Gantikan dengan URL halaman sukses Anda
+          } catch (error) {
+            console.error("Error saat mengirim data:", error);
+            // Handle error jika diperlukan
           }
-  
-          if (buttonCounter == 0) {
-            try {
-              buttonCounter++;
-              await fetch(scriptURL, { method: "POST", body: new FormData(form) });
-  
-              // Setelah berhasil mengirim data, arahkan pengguna ke halaman lain
-              window.location.href = "/registration/homeregist"; // Gantikan dengan URL halaman sukses Anda
-            } catch (error) {
-              console.error("Error saat mengirim data:", error);
-              // Handle error jika diperlukan
-            }
-          }
-          form.reset();
-        };
-        form.addEventListener("submit", handleSubmit);
-        // Membersihkan event listener saat komponen dilepas
-        return () => {
-          form.removeEventListener("submit", handleSubmit);
-        };
-      }
-    }, [paymentUrl]); // Memastikan useEffect dijalankan ulang jika paymentUrl berubah
+        }
+        form.reset();
+      };
+      form.addEventListener("submit", handleSubmit);
+      // Membersihkan event listener saat komponen dilepas
+      return () => {
+        form.removeEventListener("submit", handleSubmit);
+      };
+    }
+  }, []);
 
   return (
     <>
       <Navigation />
       <section className="registration-section">
-        <div className="container">
-          <div className="content">
-            <h1 className="sub">FORMULIR PENDAFTARAN</h1>
+        <div class="container">
+          <div class="content">
+          <h1 className="sub">FORMULIR PENDAFTARAN</h1>
             <h1 className="garis-bawah"></h1>
             <br></br>
             <h4>
@@ -278,7 +116,40 @@ function IndoensiaParticipants() {
                     readOnly
                   />
                 </div>
+
+                <div class="input-box">
+                  <label for="CATEGORY_COMPETITION" class="form-label">
+                    Category Competition
+                  </label>
+                  <select
+                    type="text"
+                    id="CATEGORY_COMPETITION"
+                    name="CATEGORY_COMPETITION"
+                    class="form-control"
+                    placeholder="Choose Category Competition "
+                    required
+                  >
+                    <option value="">--Choose Category Competition--</option>
+                    <option value="Online Competition">
+                      Online Competition
+                    </option>
+                    <option value="Online Competition + Certificate and Medal">
+                      Online Competition + Certificate and Medal
+                    </option>
+                    <option value="Offline Competition">
+                      Offline Competition
+                    </option>
+                    <option value="Offline Competition + Full Package">
+                      Offline Competition + Full Package
+                    </option>
+                    <option value="Offline Competition + Excursion">
+                      Offline Competition + Excursion
+                    </option>
+                  </select>
+                </div>
               </div>
+
+
 
               <div className="user-details">
                 <div className="input-box">
@@ -302,8 +173,6 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Masukan Nama Ketua & Anggota"
                     required
-                    value={selectedNamaLengkap}
-                    onChange={(e) => setSelectedNamaLengkap(e.target.value)} // Menambahkan handler onChange
                   ></textarea>
                 </div>
                 <div className="input-box">
@@ -327,8 +196,6 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Masukan Nomor WhatsApp Ketua Tim"
                     required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)} // Menambahkan handler onChange
                   />
                 </div>
                 <div className="input-box">
@@ -349,8 +216,7 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Masukan Alamat Email Ketua Tim"
                     required
-                    value={selectEmailKetua}
-                    onChange={(e) => setselectEmailKetua(e.target.value)}
+                 
                   />
                 </div>
                 <div className="input-box">
@@ -483,8 +349,7 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Masukan Nama Guru/Pembimbing"
                     required
-                    value={selectNameSupervisor}
-                    onChange={(e) => setselectNameSupervisor(e.target.value)}
+                  
                   ></textarea>
                 </div>
 
@@ -508,8 +373,7 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Masukan Nomor WhatsApp Guru/Pembimbing"
                     required
-                    value={selectPhoneSupervisor}
-                    onChange={(e) => setSelectPhoneSupervisor(e.target.value)}
+                    
                   />
                 </div>
 
@@ -524,116 +388,12 @@ function IndoensiaParticipants() {
                     className="form-control"
                     placeholder="Alamat Email Guru/Pembimbing"
                     required
-                    value={selectEmailSupervisor}
-                    onChange={(e) => setselectEmailSupervisor(e.target.value)}
+                  
                   />
                 </div>
               </div>
               {/* DATA PEMBIMBING END */}
               {/* DATA PEMBIMBING END */}
-
-              {/* INVOICE START */}
-              {/* INVOICE START */}
-              <div className="">
-                <h1>INVOICE</h1>
-                <h1 className="garis-bawah"></h1>
-              </div>
-              <div className="user-details">
-                <div className="input-box">
-                  <label html="CATEGORY_COMPETITION" className="form-label">
-                    Kategori Kompetisi
-                  </label>
-                  <select
-                    type="text"
-                    id="CATEGORY_COMPETITION"
-                    name="CATEGORY_COMPETITION"
-                    className="form-control"
-                    placeholder="Choose Category Competition"
-                    required
-                    onChange={handleCategoryChange}
-                    value={selectedCategory}
-                  >
-                    <option value="">--Pilih Kategori Kompetisi--</option>
-                    <option value="IYMIA Online Competition">
-                      Kompetisi Online
-                    </option>
-                    <option value="IYMIA Offline Competition">
-                      Kompetisi Offline
-                    </option>
-                    <option value="IYMIA Offline + Excursion">
-                      Kompetisi Offline + Excursion
-                    </option>
-                  </select>
-                </div>
-                <div className="mx-auto">
-                  <p className="fw-bold">
-                    *wajib di klik ketika sudah memilih kategori kompetisi
-                  </p>
-                  <button
-                    className="btn default-btn"
-                    onClick={(e) => generatePaymentLink(e)}
-                    disabled={
-                      selectedCategory !== "IYMIA Online Competition" &&
-                      selectedCategory !== "IYMIA Offline Competition" &&
-                      selectedCategory !== "IYMIA Offline + Excursion"
-                    }
-                  >
-                    Buat Tautan Pembayaran
-                  </button>
-                </div>
-              </div>
-              <div className="user-details">
-                <div className="input-box">
-                  <label className="form-label">
-                    Biaya yang harus dibayarkan{" "}
-                    <span className="fw-bold">
-                      (Belum Termasuk biaya Admin)
-                    </span>
-                  </label>
-                  <input
-                    type="text"
-                    id="TOTAL_AMOUNT"
-                    name="TOTAL_AMOUNT"
-                    className="form-control"
-                    placeholder="Total Biaya"
-                    value={
-                      price
-                        ? (price / 1000).toLocaleString("id-ID", {
-                            style: "currency",
-                            currency: "IDR",
-                            minimumFractionDigits: 3,
-                          })
-                        : ""
-                    }
-                    readOnly
-                  />
-                </div>
-                <div className="input-box">
-                  <label className="form-label">INVOICE ID</label>
-                  <input
-                    type="text"
-                    id="ORDER_ID"
-                    name="ORDER_ID"
-                    className="form-control"
-                    placeholder="ID PEMBAYARAN"
-                    value={uniqueId}
-                    readOnly
-                  />
-                </div>
-                <div className="input-box invisible">
-                  <label className="form-label">Link Invoice</label>
-                  <input
-                    type="text"
-                    id="LINK_INVOICE"
-                    name="LINK_INVOICE"
-                    className="form-control"
-                    placeholder="Link Pembayaran"
-                    value={paymentUrl}
-                  />
-                </div>
-              </div>
-              {/* INVOICE END */}
-              {/* INVOICE END */}
 
               {/* DETAIL PROJECT START */}
               {/* DETAIL PROJECT START */}
@@ -798,7 +558,7 @@ function IndoensiaParticipants() {
               </div>
               {/* GENERAL INFORMATION END */}
               {/* GENERAL INFORMATION END */}
-              <div className="buttonindo">
+              <div className="button">
                 <input type="submit" value="KIRIM" />
               </div>
             </form>
@@ -809,5 +569,3 @@ function IndoensiaParticipants() {
     </>
   );
 }
-
-export default IndoensiaParticipants;
