@@ -12,14 +12,11 @@ const MainBanner = () => {
             <div className="row align-items-center">
               <div className="col-lg-5 col-md-12">
                 <div className="banner-wrapper-content">
-                  <span className="sub-title">Coming Soon 2025</span>
+                  <span className="sub-title">Open Registration 2025</span>
                   <h1>International Young Moslem Inventor Award</h1>
-                  <Link href="" legacyBehavior>
-                    <a href="/registration/homeregist" target="_blank" className="default-btn">Registration</a>
+                  <Link href="/registration/homeregist" legacyBehavior>
+                    <a className="default-btn">Click Here for Registration!!</a>
                   </Link>
-                  {/* <Link href="/registration/homeregist" legacyBehavior>
-                    <a className="default-btn">Registration Link</a>
-                  </Link> */}
                 </div>
               </div>
               <div className="col-lg-7 col-md-12">
