@@ -15,7 +15,13 @@ const MainBanner = () => {
                   <span className="sub-title">Open Registration 2025</span>
                   <h1>International Young Moslem Inventor Award</h1>
                   <Link href="/registration/homeregist" legacyBehavior>
-                    <a className="default-btn">Click Here for Registration!!</a>
+                    <a className="default-btn m-2">Click Here for Registration!!</a>
+                  </Link>
+                  <Link
+                    href="https://drive.google.com/file/d/13t_yRxk73cKPfYTnXab2-G36j6j2jYtl/view?usp=sharing"
+                    legacyBehavior target="_blank"
+                  >
+                    <a className="default-btn m-2">Guide Book</a>
                   </Link>
                 </div>
               </div>
