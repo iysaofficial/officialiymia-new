@@ -79,7 +79,7 @@ export default function Internationalparticipants() {
             </p>
             <p>
               2.&nbsp; &nbsp;After making sure the data is correct, you can
-              click <span className="fw-bold">&quot;SUBMIT FROM&quot;</span>. If the data has been successfully submitted, you will be moved to another page.
+              click <span className="fw-bold">&quot;SUBMIT FORM&quot;</span>. If the data has been successfully submitted, you will be moved to another page.
             </p>
             <p>
               3.&nbsp; &nbsp;There will be an information  email that the registration has been received sent to the team leader&apos;s email address, and the file will be validated by our team. Please be patient and wait for a maximum of 3 days after the registration time, the Letter of Acceptance (LOA) will be sent to the team leader&apos;s email address.

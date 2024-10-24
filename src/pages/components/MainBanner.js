@@ -19,9 +19,10 @@ const MainBanner = () => {
                   </Link>
                   <Link
                     href="https://drive.google.com/file/d/13t_yRxk73cKPfYTnXab2-G36j6j2jYtl/view?usp=sharing"
-                    legacyBehavior target="_blank"
+                    legacyBehavior
+                    target="_blank"
                   >
-                    <a className="default-btn m-2">Guide Book</a>
+                    <a className="default-btn m-2" target="_blank">Guide Book</a>
                   </Link>
                 </div>
               </div>

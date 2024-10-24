@@ -39,7 +39,10 @@ export default function Internationalparticipants() {
         if (buttonCounter == 0) {
           try {
             buttonCounter++;
-            await fetch(scriptURL, { method: "POST", body: new FormData(form) });
+            await fetch(scriptURL, {
+              method: "POST",
+              body: new FormData(form),
+            });
             // Setelah berhasil mengirim data, arahkan pengguna ke halaman lain
             window.location.href = "/registration/homeregist"; // Gantikan dengan URL halaman sukses Anda
           } catch (error) {
@@ -63,7 +66,7 @@ export default function Internationalparticipants() {
       <section className="registration-section">
         <div class="container">
           <div class="content">
-          <h1 className="sub">FORMULIR PENDAFTARAN</h1>
+            <h1 className="sub">FORMULIR PENDAFTARAN</h1>
             <h1 className="garis-bawah"></h1>
             <br></br>
             <h4>
@@ -77,20 +80,13 @@ export default function Internationalparticipants() {
               dikirim sudah final dan tidak mengalami perubahan.
             </p>
             <p>
-              2. Pastikan{" "}
-              <span className="fw-bold">&quot;INVOICE ID&quot;</span> sudah
-              terbuat agar tombol untuk{" "}
-              <span className="fw-bold">&quot;KIRIM &quot;</span> data bisa
-              muncul.
-            </p>
-            <p>
-              3. Setelah memastikan data sudah benar, Anda dapat mengklik tombol
+              2. Setelah memastikan data sudah benar, Anda dapat mengklik tombol
               <span className="fw-bold"> &quot;KIRIM&quot;</span> cukup sekali
               saja. Jika data telah berhasil dikirimkan, Anda akan dipindahkan
               ke halaman lain.
             </p>
             <p>
-              4. Akan ada email informasi bahwa pendaftaran telah diterima yang
+              3. Akan ada email informasi bahwa pendaftaran telah diterima yang
               dikirimkan ke alamat email ketua tim, dan berkas akan divalidasi
               oleh tim kami. Mohon bersabar dan tunggu maksimal 3 hari setelah
               waktu pendaftaran, Letter of Acceptance (LOA) akan dikirimkan ke
@@ -133,14 +129,8 @@ export default function Internationalparticipants() {
                     <option value="Online Competition">
                       Online Competition
                     </option>
-                    <option value="Online Competition + Certificate and Medal">
-                      Online Competition + Certificate and Medal
-                    </option>
                     <option value="Offline Competition">
                       Offline Competition
-                    </option>
-                    <option value="Offline Competition + Full Package">
-                      Offline Competition + Full Package
                     </option>
                     <option value="Offline Competition + Excursion">
                       Offline Competition + Excursion
@@ -148,8 +138,6 @@ export default function Internationalparticipants() {
                   </select>
                 </div>
               </div>
-
-
 
               <div className="user-details">
                 <div className="input-box">
@@ -173,7 +161,12 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Masukan Nama Ketua & Anggota"
                     required
+                    value={selectedMaxNamaLengkap}
+                    onChange={handleInputNameChange}
                   ></textarea>
+                  <p>
+                    {selectedMaxNamaLengkap.length} / {maxNameChars} character
+                  </p>
                 </div>
                 <div className="input-box">
                   <label htmlFor="LEADER_WHATSAPP" className="form-label">
@@ -216,7 +209,6 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Masukan Alamat Email Ketua Tim"
                     required
-                 
                   />
                 </div>
                 <div className="input-box">
@@ -349,7 +341,6 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Masukan Nama Guru/Pembimbing"
                     required
-                  
                   ></textarea>
                 </div>
 
@@ -373,7 +364,6 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Masukan Nomor WhatsApp Guru/Pembimbing"
                     required
-                    
                   />
                 </div>
 
@@ -388,7 +378,6 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Alamat Email Guru/Pembimbing"
                     required
-                  
                   />
                 </div>
               </div>
@@ -419,7 +408,12 @@ export default function Internationalparticipants() {
                     className="form-control"
                     placeholder="Masukkan Judul Proyek Anda"
                     required
+                    value={selectedMaxProject}
+                    onChange={handleInputProjectChange}
                   ></textarea>
+                  <p>
+                    {selectedMaxProject.length} / {maxProjectChars} character
+                  </p>
                 </div>
                 <div className="input-box">
                   <label for="CATEGORIES" className="form-label">
@@ -442,9 +436,7 @@ export default function Internationalparticipants() {
                       Innovation Science
                     </option>
                     <option value="Life Sciences">Life Sciences</option>
-                    <option value="Engineering">
-                      Engineering
-                    </option>
+                    <option value="Engineering">Engineering</option>
                   </select>
                 </div>
                 <div className="input-box">
