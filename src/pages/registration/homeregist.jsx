@@ -2,7 +2,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PageBanner from "../components/PageBanner";
 import { useState } from "react";
-import { internationalTerms } from "../data/terms";
+import { internationalTerms } from "../../data/terms";
 
 function HomeRegist() {
 
