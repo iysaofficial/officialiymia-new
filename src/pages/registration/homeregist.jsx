@@ -1,11 +1,11 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PageBanner from "../components/PageBanner";
-import Link from "next/link";
 import { useState } from "react";
-import { indonesiaTerms, internationalTerms } from "../data/terms"; // Import Terms
+import { internationalTerms } from "../data/terms";
 
 function HomeRegist() {
+
   const [showModal, setShowModal] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [redirectLink, setRedirectLink] = useState("");
@@ -36,13 +36,14 @@ function HomeRegist() {
         homePageText="Home"
         activePageText="Home Registration"
       />
+      
       <section className="homeregist-section">
         <div>
           <div className="wrapper">
             <div className="text-center">
               <h1 className="mx-auto">REGISTRATION FORM</h1>
               <h3 className="mx-auto mt-5 mb-2">
-                Choose Categories Participant for Registration GYIIF 2025
+                Choose Categories Participant for Registration IYMIA 2025
               </h3>
             </div>
           </div>
