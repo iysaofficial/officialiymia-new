@@ -9,6 +9,8 @@ import Category from "./components/Category";
 import Layout from "./components/Layout";
 import Process from "./components/Process";
 import GoTop from "./components/GoTop";
+import Timevenue from "./components/Timevenue";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -23,12 +25,13 @@ export default function Home() {
       <Navbar />
       <MainBanner />
       <PartnerStyle2 />
-      <About/>
-      <Category/>
-      <Layout/>
-      <Process/>
-      <GoTop/>
-      <Footer/>
+      <About />
+      <Timevenue />
+      <Category />
+      <Layout />
+      <Process />
+      <GoTop />
+      <Footer />
     </>
   );
 }
