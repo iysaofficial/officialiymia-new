@@ -17,10 +17,11 @@ export default function Document() {
 
         {/* FONT AWESOME */}
         <Script
-          src="https://kit.fontawesome.com/c788371d84.js"
+          src="https://kit.fontawesome.com/138210a6d5.js"
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
+        <script src="" crossorigin="anonymous"></script>
         <Script
           src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
           integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -93,6 +93,21 @@ const Navigation = () => {
 
                       <li className="nav-item">
                         <Link
+                          href="https://drive.google.com/file/d/1i-rGeT9hSKNeAWFjimEVL5BBVHyMqhir/view?usp=sharing"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a
+                            onClick={toggleNavbar}
+                            className="nav-link"
+                            target="_blank"
+                          >
+                            Press Release 2025
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
                           href="https://drive.google.com/file/d/1UVCaBsvxjac-0OF7VCAOfPJEOvskYBsz/view?usp=sharing"
                           activeClassName="active"
                           legacyBehavior
@@ -236,7 +251,7 @@ const Navigation = () => {
                             className="nav-link"
                             target="_blank"
                           >
-                            Certificate Supervisor
+                            Certificate Supervisor 2024
                           </a>
                         </Link>
                       </li>

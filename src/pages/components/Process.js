@@ -51,13 +51,13 @@ export default class process extends Component {
 
             <div className="how-it-works-content">
               <div className="number">3</div>
-              <h2>After Movie 2024</h2>
+              <h2>After Movie 2025</h2>
               <div className="video_content">
                 <div className="video">
                   <iframe
                     width="100%"
                     height="315"
-                    src="https://www.youtube.com/embed/KJOATDQofBI?si=kuVM-dqrrJiUndvq"
+                    src="https://www.youtube.com/embed/X_DjNOrnvdA?si=bCNuBirJtihlG5Yj"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -26,7 +26,7 @@ export default function Home() {
       <MainBanner />
       <PartnerStyle2 />
       <About />
-      <Timevenue />
+      {/* <Timevenue /> */}
       <Category />
       <Layout />
       <Process />
