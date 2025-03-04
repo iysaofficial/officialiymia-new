@@ -149,6 +149,21 @@ const Navigation = () => {
                     <ul className="dropdown-menu">
                       <li className="nav-item">
                         <Link
+                          href="https://drive.google.com/drive/folders/1GXoYKQu5Ss3v9RdXna3w9LbcFzS3qZeu?usp=drive_link"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a
+                            onClick={toggleNavbar}
+                            className="nav-link"
+                            target="_blank"
+                          >
+                            Curation 2025
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
                           href="https://drive.google.com/drive/folders/1_SPW8Ez2fjU301tbjBcrCl5VzzckU_vo?usp=sharing"
                           activeClassName="active"
                           legacyBehavior
