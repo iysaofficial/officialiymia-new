@@ -225,6 +225,18 @@ const Navigation = () => {
                     <ul className="dropdown-menu">
                       <li className="nav-item">
                         <Link
+                          href="https://drive.google.com/drive/folders/1DZmHgSOGYVQ4sLlM_A0WDsfrzh-9Daoz?usp=sharing"
+                          target="_blank"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a onClick={toggleNavbar} className="nav-link">
+                            Gallery 2025
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
                           href="https://drive.google.com/drive/folders/1v7k8qwGLENT3xXQHNN5yDR2dq6POKUaR?usp=sharing"
                           target="_blank"
                           activeClassName="active"
