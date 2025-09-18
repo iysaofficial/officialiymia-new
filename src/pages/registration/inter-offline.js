@@ -157,7 +157,7 @@ export default function InternationalOffline() {
             <br />
             <br />
             <h4>
-              HELLO IYMIA 2025 PARTICIPANTS, Please consider the following
+              HELLO IYMIA 2026 INTERNATIONAL CITIZEN, Please consider the following
               information before filling out the registration form :
             </h4>
             <br />
@@ -658,7 +658,7 @@ export default function InternationalOffline() {
 
                 <div className="input-box">
                   <label for="INFORMATION_RESOURCES" className="form-label">
-                    IYMIA 2025 Competition Information Resources
+                    IYMIA 2026 Competition Information Resources
                   </label>
                   <select
                     type="text"

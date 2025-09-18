@@ -1,10 +1,7 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import {
-  indonesiaOnlineTerms,
-  indonesiaOfflineTerms,
-} from "../../data/terms";
-
+import { indonesiaOnlineTerms, indonesiaOfflineTerms } from "../../data/terms";
+import { FlagIcon } from "react-flag-kit";
 import { useState, useEffect } from "react";
 
 function HomeIndo() {
@@ -37,7 +34,7 @@ function HomeIndo() {
 
   return (
     <>
-    <Navigation/>
+      <Navigation />
       <section className="homeregist-section">
         <div>
           <div className="wrapper">
@@ -46,7 +43,7 @@ function HomeIndo() {
                 REGISTRATION FORM FOR INDONESIA PARTICIPANTS
               </h1>
               <h3 className="mx-auto mt-5 mb-2 text-sm md:text-lg lg:text-2xl">
-                Choose Categories Competition for Registration IYMIA 2025
+                Choose Categories Competition for Registration IYMIA 2026
               </h3>
             </div>
           </div>
@@ -60,7 +57,12 @@ function HomeIndo() {
                 )
               }
             >
-              Online Competition<i className="fa-solid fa-earth-americas"></i>
+              Online Competition{" "}
+              <FlagIcon
+                code="ID"
+                title="Indonesia"
+                style={{ marginLeft: "8px" }}
+              />
             </a>
             <a
               className="btn default-btn text-center me-lg-5 "
@@ -71,7 +73,12 @@ function HomeIndo() {
                 )
               }
             >
-              Offline Competition<i className="fa-solid fa-earth-americas"></i>
+              Offline Competition
+              <FlagIcon
+                code="ID"
+                title="Indonesia"
+                style={{ marginLeft: "8px" }}
+              />
             </a>
           </div>
         </div>
@@ -106,7 +113,7 @@ function HomeIndo() {
           </div>
         </div>
       )}
-      <Footer/>
+      <Footer />
     </>
   );
 }

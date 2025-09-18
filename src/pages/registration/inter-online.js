@@ -159,7 +159,7 @@ export default function InternationalOnline() {
             <br />
             <br />
             <h4>
-              HELLO IYMIA 2025 PARTICIPANTS, Please consider the following
+              HELLO YISF 2026 INTERNATIONAL CITIZEN, Please consider the following
               information before filling out the registration form :
             </h4>
             <br />
@@ -229,7 +229,7 @@ export default function InternationalOnline() {
                     name="CATEGORY_PARTICIPANT"
                     className="form-control"
                     placeholder="Choose Categories Participant"
-                    value="International Participant"
+                    value="International Citizen"
                     readOnly
                   ></input>
                 </div>
@@ -677,7 +677,7 @@ export default function InternationalOnline() {
 
                 <div className="input-box">
                   <label for="INFORMATION_RESOURCES" className="form-label">
-                    IYMIA 2025 Competition Information Resources
+                    YISF 2026 Competition Information Resources
                   </label>
                   <select
                     type="text"
@@ -690,11 +690,11 @@ export default function InternationalOnline() {
                     <option value="">
                       --Select the Source of Information--
                     </option>
-                    <option value="IYMIA Website">IYMIA Website</option>
+                    <option value="YISF Website">YISF Website</option>
                     <option value="IYSA Website">IYSA Website</option>
-                    <option value="IYMIA Email">IYMIA Email</option>
+                    <option value="YISF Email">YISF Email</option>
                     <option value="IYSA Instagram">IYSA Instagram</option>
-                    <option value="IYMIA Instagram">IYMIA Instagram</option>
+                    <option value="YISF Instagram">YISF Instagram</option>
                     <option value="Supervisor/School">Supervisor/School</option>
                     <option value="IYSA Facebook">IYSA Facebook</option>
                     <option value="IYSA Linkedin">IYSA Linkedin</option>

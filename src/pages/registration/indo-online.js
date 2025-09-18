@@ -152,7 +152,7 @@ function IndonesiaOnline() {
             <br />
             <br />
             <h4>
-              HELLO IYMIA 2025 PARTICIPANTS, Please consider the following
+              HELLO IYMIA 2026 INDONESIAN CITIZEN, Please consider the following
               information before filling out the registration form :
             </h4>
             <br />
@@ -221,7 +221,7 @@ function IndonesiaOnline() {
                     name="CATEGORY_PARTICIPANT"
                     className="form-control"
                     placeholder="Choose Categories Participant"
-                    value="INDONESIA PARTICIPANTS"
+                    value="INDONESIAN CITIZEN"
                     readOnly
                   />
                 </div>
@@ -637,7 +637,7 @@ function IndonesiaOnline() {
                 </div>
                 <div className="input-box">
                   <label for="INFORMATION_RESOURCES" className="form-label">
-                    IYMIA 2025 Competition Information Resources
+                    IYMIA 2026 Competition Information Resources
                   </label>
                   <select
                     type="text"
