@@ -47,13 +47,13 @@ export default function InternationalOnline() {
     // Logika untuk menentukan harga berdasarkan kategori yang dipilih
     switch (value) {
       case "International Young Moslem Inventor Award - Online Competition":
-        setCategoryPrice("$75 USD");
+        setCategoryPrice("$105 USD");
         break;
       case "International Young Moslem Inventor Award - Online Competition + Certificate and Medal (SOUTH EAST ASIA ONLY)":
-        setCategoryPrice("$200 USD");
+        setCategoryPrice("$225 USD");
         break;
       case "International Young Moslem Inventor Award - Online Competition + Certificate and Medal (Exclude SOUTH EAST ASIA)":
-        setCategoryPrice("$250 USD");
+        setCategoryPrice("$275 USD");
         break;
       default:
         setCategoryPrice("");
@@ -159,7 +159,7 @@ export default function InternationalOnline() {
             <br />
             <br />
             <h4>
-              HELLO YISF 2026 INTERNATIONAL CITIZEN, Please consider the following
+              HELLO IYMIA 2026 INTERNATIONAL CITIZEN, Please consider the following
               information before filling out the registration form :
             </h4>
             <br />
@@ -677,7 +677,7 @@ export default function InternationalOnline() {
 
                 <div className="input-box">
                   <label for="INFORMATION_RESOURCES" className="form-label">
-                    YISF 2026 Competition Information Resources
+                    IYMIA 2026 Competition Information Resources
                   </label>
                   <select
                     type="text"
@@ -690,11 +690,11 @@ export default function InternationalOnline() {
                     <option value="">
                       --Select the Source of Information--
                     </option>
-                    <option value="YISF Website">YISF Website</option>
+                    <option value="IYMIA Website">IYMIA Website</option>
                     <option value="IYSA Website">IYSA Website</option>
-                    <option value="YISF Email">YISF Email</option>
+                    <option value="IYMIA Email">IYMIA Email</option>
                     <option value="IYSA Instagram">IYSA Instagram</option>
-                    <option value="YISF Instagram">YISF Instagram</option>
+                    <option value="IYMIA Instagram">IYMIA Instagram</option>
                     <option value="Supervisor/School">Supervisor/School</option>
                     <option value="IYSA Facebook">IYSA Facebook</option>
                     <option value="IYSA Linkedin">IYSA Linkedin</option>
