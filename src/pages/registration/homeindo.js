@@ -50,14 +50,14 @@ function HomeIndo() {
           <div className="link-web mx-auto text-center">
             <a
               className="btn default-btn text-center me-lg-5 "
-              onClick={() =>
-                handleOpenModal(
-                  "/registration/indo-online",
-                  indonesiaOnlineTerms
-                )
-              }
+              // onClick={() =>
+              //   handleOpenModal(
+              //     "/registration/indo-online",
+              //     indonesiaOnlineTerms
+              //   )
+              // }
             >
-              Online Competition{" "}
+              Close Registration{" "}
               <FlagIcon
                 code="ID"
                 title="Indonesia"
@@ -66,14 +66,14 @@ function HomeIndo() {
             </a>
             <a
               className="btn default-btn text-center me-lg-5 "
-              onClick={() =>
-                handleOpenModal(
-                  "/registration/indo-offline",
-                  indonesiaOfflineTerms
-                )
-              }
+              // onClick={() =>
+              //   handleOpenModal(
+              //     "/registration/indo-offline",
+              //     indonesiaOfflineTerms
+              //   )
+              // }
             >
-              Offline Competition
+              Close Registration
               <FlagIcon
                 code="ID"
                 title="Indonesia"

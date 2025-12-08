@@ -80,7 +80,6 @@ function IndonesiaOnline() {
         const interval = setInterval(() => {
           count -= 1;
           setCountdown(count);
-
           if (count <= 1) {
             clearInterval(interval); // Hentikan countdown di angka 1
             setCanClick(true);
@@ -177,7 +176,6 @@ function IndonesiaOnline() {
             </p>
             <br />
             <br />
-
             {showModal && (
               <div className="modal-overlay-submit">
                 <div className="modal-submit text-lg-center text-md-center">
