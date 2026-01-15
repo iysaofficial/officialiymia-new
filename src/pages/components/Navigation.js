@@ -225,18 +225,6 @@ const Navigation = () => {
                     <ul className="dropdown-menu">
                       <li className="nav-item">
                         <Link
-                          href="https://drive.google.com/drive/folders/1DZmHgSOGYVQ4sLlM_A0WDsfrzh-9Daoz?usp=sharing"
-                          target="_blank"
-                          activeClassName="active"
-                          legacyBehavior
-                        >
-                          <a onClick={toggleNavbar} className="nav-link">
-                            Gallery 2025
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
                           href="https://drive.google.com/drive/folders/1DZmHgSOGYVQ4sLlM_A0WDsfrzh-9Daoz"
                           target="_blank"
                           activeClassName="active"
@@ -280,6 +268,19 @@ const Navigation = () => {
                     </Link>
                     <ul className="dropdown-menu">
                       <li className="nav-item">
+                        <Link
+                          href="https://drive.google.com/drive/folders/1U6k-c7tGm-zBfj-XYSSwKbdlrMDbUQsy"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a
+                            onClick={toggleNavbar}
+                            className="nav-link"
+                            target="_blank"
+                          >
+                            Certificate Supervisor 2026
+                          </a>
+                        </Link>
                         <Link
                           href="https://drive.google.com/drive/folders/17HiPX0Oqg-dmy6GayLEtVQ3--VxwUOuA?usp=drive_link"
                           activeClassName="active"
