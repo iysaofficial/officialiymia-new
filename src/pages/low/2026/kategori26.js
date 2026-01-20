@@ -35,7 +35,7 @@ const kategori24 = () => {
                 {" "}
                 Special Award{" "}
               </a>
-            </Link>
+            </Link> */}
             <Link href="/low/2026/jenjangofl26" legacyBehavior>
               <a
                 className="btn default-btn m-3"
@@ -44,7 +44,7 @@ const kategori24 = () => {
                 {" "}
                 IYMIA OFFLINE{" "}
               </a>
-            </Link> */}
+            </Link>
             <Link href="/low/2026/jenjangonl26" legacyBehavior>
               <a
                 className="btn default-btn m-3"

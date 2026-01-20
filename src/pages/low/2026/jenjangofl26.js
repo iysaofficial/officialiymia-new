@@ -25,7 +25,7 @@ const jenjangofl24 = () => {
 
           <div className="contact-form">
             <Link
-              href="https://drive.google.com/file/d/16dn-EZII4vPrTdpChZ5Nu4Slsw7VfqrK/view?usp=sharing"
+              href="https://drive.google.com/file/d/1sbnogvqpiudICnjhtk64JisdwpUgHhC3/view?usp=sharing"
               legacyBehavior
             >
               <a
@@ -34,7 +34,33 @@ const jenjangofl24 = () => {
                 style={{ fontSize: "22px", fontWeight: "bold" }}
               >
                 {" "}
-                Junior High School{" "}
+                University{" "}
+              </a>
+            </Link>
+            <Link
+              href="https://drive.google.com/file/d/1PF3Q8tkzqjOupy5-NdViEp_-p2M9Nofc/view?usp=sharing"
+              legacyBehavior
+            >
+              <a
+                target="_blank"
+                className="btn default-btn m-3"
+                style={{ fontSize: "22px", fontWeight: "bold" }}
+              >
+                {" "}
+                Secondary School{" "}
+              </a>
+            </Link>
+            <Link
+              href="https://drive.google.com/file/d/1qLcaXFxMzrsYv8lwz0_BVdcpomStFIe6/view?usp=sharing"
+              legacyBehavior
+            >
+              <a
+                target="_blank"
+                className="btn default-btn m-3"
+                style={{ fontSize: "22px", fontWeight: "bold" }}
+              >
+                {" "}
+                Elementary School{" "}
               </a>
             </Link>
           </div>
