@@ -16,7 +16,16 @@ const MainBanner = () => {
                   <span className="sub-title">Coming Soon 2026</span>
                   <h1>International Young Moslem Inventor Award</h1>
                   <Link href="/" legacyBehavior>
-                    <a className="default-btn m-2">Coming Soon 2026</a>
+                    <a
+                      className="default-btn m-2"
+                      style={{
+                        pointerEvents: "none", // Mematikan fungsi klik
+                        // opacity: 0.5,           // Membuat tombol terlihat pudar
+                        cursor: "not-allowed", // Mengubah kursor saat diarahkan
+                      }}
+                    >
+                      Coming Soon 2026
+                    </a>
                   </Link>
                   {/* <Link
                     href="https://drive.google.com/file/d/1nqU4n6oAFpKCkFZ4S_GXT-4boFRWb45f/view?usp=sharing"
