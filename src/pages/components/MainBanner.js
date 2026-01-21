@@ -13,10 +13,10 @@ const MainBanner = () => {
               <div className="col-lg-5 col-md-12">
                 <div className="banner-wrapper-content">
                   {/* <span className="sub-title">Coming Soon 2026</span> */}
-                  <span className="sub-title">Close Registration</span>
+                  <span className="sub-title">Coming Soon 2026</span>
                   <h1>International Young Moslem Inventor Award</h1>
                   <Link href="/" legacyBehavior>
-                    <a className="default-btn m-2">Close Registration</a>
+                    <a className="default-btn m-2">Coming Soon 2026</a>
                   </Link>
                   <Link
                     href="https://drive.google.com/file/d/1nqU4n6oAFpKCkFZ4S_GXT-4boFRWb45f/view?usp=sharing"
