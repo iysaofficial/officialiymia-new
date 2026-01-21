@@ -18,13 +18,13 @@ const MainBanner = () => {
                   <Link href="/" legacyBehavior>
                     <a className="default-btn m-2">Close Registration</a>
                   </Link>
-                  <Link
+                  {/* <Link
                     href="https://drive.google.com/file/d/1nqU4n6oAFpKCkFZ4S_GXT-4boFRWb45f/view?usp=sharing"
                     legacyBehavior
                     target="_blank"
                   >
                     <a className="default-btn m-2" target="_blank">Guide Book</a>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="col-lg-7 col-md-12">
