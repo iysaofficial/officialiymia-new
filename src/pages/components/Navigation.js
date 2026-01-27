@@ -310,19 +310,46 @@ const Navigation = () => {
                     </Link>
                     <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <Link
-                          href="https://drive.google.com/drive/folders/1U6k-c7tGm-zBfj-XYSSwKbdlrMDbUQsy"
-                          activeClassName="active"
-                          legacyBehavior
-                        >
-                          <a
-                            onClick={toggleNavbar}
-                            className="nav-link"
-                            target="_blank"
-                          >
-                            Certificate Supervisor 2026
+                        <Link href="#" activeClassName="active" legacyBehavior>
+                          <a onClick={toggleNavbar} className="nav-link">
+                            Certificate Supervisor 2026{" "}
+                            <i className="fa fa-caret-down"></i>
                           </a>
                         </Link>
+                        <ul className="dropdown-menu">
+                          <li className="nav-item">
+                            <Link
+                              href="https://drive.google.com/drive/folders/1U6k-c7tGm-zBfj-XYSSwKbdlrMDbUQsy"
+                              activeClassName="active"
+                              legacyBehavior
+                            >
+                              <a
+                                onClick={toggleNavbar}
+                                className="nav-link"
+                                target="_blank"
+                              >
+                                Online
+                              </a>
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link
+                              href="https://drive.google.com/drive/folders/16s6ZPlCZqFhRxQZmVJigtAjp53mIuQdp?usp=sharing"
+                              activeClassName="active"
+                              legacyBehavior
+                            >
+                              <a
+                                onClick={toggleNavbar}
+                                className="nav-link"
+                                target="_blank"
+                              >
+                                Offline
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="nav-item">
                         <Link
                           href="https://drive.google.com/drive/folders/17HiPX0Oqg-dmy6GayLEtVQ3--VxwUOuA?usp=drive_link"
                           activeClassName="active"
