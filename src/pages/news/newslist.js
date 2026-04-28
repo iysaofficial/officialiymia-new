@@ -22,6 +22,82 @@ const news = () => {
             <div className="card">
               <div className="card-body">
                 <Image
+                  src="https://res.cloudinary.com/dtik1z1qd/image/upload/v1777349326/iymia_3_ajck83.jpg"
+                  className="img-fluid img-responsive mt-2"
+                  width={400} // Sesuaikan lebar gambar
+                  height={300} // Sesuaikan tinggi gambar
+                  alt="Foto 1"
+                  style={{ objectFit: "cover", width: "100%", height: "340px" }}
+                />
+                <Link href="/news/news1" legacyBehavior>
+                  <h5 className="card-title mt-3 cursor-pointer">
+                    Murid MAN 1 Jembrana Raih Emas di International Young Moslem Inventor Award 2026
+                  </h5>
+                </Link>
+                <p className="card-text">
+                  Humas Mansaja (Mustika) — MAN 1 Jembrana sukses mengawali tahun baru 2026 dengan menorehkan prestasi membanggakan di tingkat internasional. Delapan murid yang bergabung dalam Hipotesa tersebut berhasil meraih medali emas dalam ajang International Young Moslem Inventor Award (IYMIA) 2026 yang diselenggarakan secara daring pada tanggal 7 sampai 9 Januari 2026. Kompetisi ini merupakan bagian dari Global Youth Islamic Innovation Festival (GYIIF) 2026 yang digelar oleh Indonesian Young Scientist Association.
+                </p>
+                <Link href="https://man1jembrana.sch.id/risalah/?p=1900" legacyBehavior>
+                  <a className="btn default-btn">Read More...</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <Image
+                  src="https://res.cloudinary.com/dtik1z1qd/image/upload/v1777349327/iymia_2_gpgqer.jpg"
+                  className="img-fluid img-responsive mt-2"
+                  width={400} // Sesuaikan lebar gambar
+                  height={300} // Sesuaikan tinggi gambar
+                  alt="Foto 1"
+                  style={{ objectFit: "cover", width: "100%", height: "340px" }}
+                />
+                <Link href="/news/news1" legacyBehavior>
+                  <h5 className="card-title mt-3 cursor-pointer">
+                    Peserta Didik MTsN 41 Jakarta Ikuti Ajang IYMIA 2026 di IPB
+                  </h5>
+                </Link>
+                <p className="card-text">
+                  Bogor (Humas MTsN 41 Jakarta) — Peserta didik MTsN 41 Al Azhar Asy Syarif Jakarta mengikuti ajang International Young Moslem Inventor Award (IYMIA) 2026 yang diselenggarakan secara hybrid dan dipusatkan di IPB University, Bogor. Keikutsertaan madrasah ini merupakan bagian dari pembinaan dan pengembangan prestasi peserta didik madrasah di bawah naungan Kementerian Agama Provinsi DKI Jakarta. Kegiatan offline IYMIA 2026 berlangsung selama empat hari, mulai 15 hingga 18 Januari 2026. Pada pembukaan acara, 15 Januari 2026..
+                </p>
+                <Link href="https://dki.kemenag.go.id/berita/peserta-didik-mtsn-41-jakarta-ikuti-ajang-iymia-2026-di-ipb-pJ7S8" legacyBehavior>
+                  <a className="btn default-btn">Read More...</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <Image
+                  src="https://res.cloudinary.com/dtik1z1qd/image/upload/v1777349326/iymia_1_nsv6cs.jpg"
+                  className="img-fluid img-responsive mt-2"
+                  width={400} // Sesuaikan lebar gambar
+                  height={300} // Sesuaikan tinggi gambar
+                  alt="Foto 1"
+                  style={{ objectFit: "cover", width: "100%", height: "340px" }}
+                />
+                <Link href="/news/news1" legacyBehavior>
+                  <h5 className="card-title mt-3 cursor-pointer">
+                    Siswa SMP Utama Binaan YBM PLN Raih Gold Medal dan Grand Award di IYMIA 2026
+                  </h5>
+                </Link>
+                <p className="card-text">
+                  Prestasi membanggakan kembali diraih oleh siswa SMP Utama, lembaga binaan pendidikan YBM PLN, dalam ajang International Young Moslem Inventor Award (IYMIA) 2026 yang diselenggarakan di IPB Dramaga, Bogor. Kompetisi internasional ini diikuti oleh 364 tim, baik secara daring maupun luring, dari 9 negara.
+                  Pada kategori Engineering, dua siswa SMP Utama berhasil meraih Gold Medal, yakni Wivdiana Lethysia (kelas 9) dan Indah Yuliana Putri (kelas 8). Keduanya mengangkat karya ilm......
+                </p>
+                <Link href="https://ybmpln.org/Kabar/detail/9097/siswa-smp-utama-binaan-ybm-pln-raih-gold-medal-dan-grand-award-di-iymia-2026/6" legacyBehavior>
+                  <a className="btn default-btn">Read More...</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <Image
                   src="/images/news/iymia1.jpg"
                   className="card-img-top col-sm-3 mt-2 img-fluid img-responsive"
                   layout="intrinsic"
