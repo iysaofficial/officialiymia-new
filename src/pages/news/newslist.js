@@ -22,7 +22,7 @@ const news = () => {
             <div className="card">
               <div className="card-body">
                 <Image
-                  src="https://ik.imagekit.io/iysaimg/ASSET%20IYSA/iymia_3_ajck83.jpg?updatedAt=1781963576304"
+                  src="/images/news/iymia_3_ajck83.jpg"
                   className="img-fluid img-responsive mt-2"
                   width={400} // Sesuaikan lebar gambar
                   height={300} // Sesuaikan tinggi gambar
@@ -59,7 +59,7 @@ const news = () => {
             <div className="card">
               <div className="card-body">
                 <Image
-                  src="https://ik.imagekit.io/iysaimg/ASSET%20IYSA/iymia_2_gpgqer.jpg?updatedAt=1781963574250"
+                  src="/images/news/iymia_2_gpgqer.jpg"
                   className="img-fluid img-responsive mt-2"
                   width={400} // Sesuaikan lebar gambar
                   height={300} // Sesuaikan tinggi gambar
@@ -95,7 +95,7 @@ const news = () => {
             <div className="card">
               <div className="card-body">
                 <Image
-                  src="https://ik.imagekit.io/iysaimg/ASSET%20IYSA/iymia_1_nsv6cs.jpg?updatedAt=1781963576262"
+                  src="/images/news/iymia_1_nsv6cs.jpg"
                   className="img-fluid img-responsive mt-2"
                   width={400} // Sesuaikan lebar gambar
                   height={300} // Sesuaikan tinggi gambar

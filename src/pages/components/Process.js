@@ -4,14 +4,14 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const eventPhotos = [
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-153_jj6ejy.jpg?updatedAt=1781963616522",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-121_xixdfa.jpg?updatedAt=1781963616278",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-73_w6wyvr.jpg?updatedAt=1781963616500",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-38_hbrcha.jpg?updatedAt=1781963615989",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-39_ir7y7a.jpg?updatedAt=1781963615959",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/GYIIF_IYMIA_2026-52_iozcqx.jpg?updatedAt=1781963615907",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/nsif_2_kood8y.jpg?updatedAt=1781963615846",
-  "https://ik.imagekit.io/iysaimg/ASSET%20IYSA/nsif_3_dc8pjp.jpg?updatedAt=1781963615809",
+  "/images/GYIIF_IYMIA_2026-153_jj6ejy.jpg",
+  "/images/GYIIF_IYMIA_2026-121_xixdfa.jpg",
+  "/images/GYIIF_IYMIA_2026-73_w6wyvr.jpg",
+  "/images/GYIIF_IYMIA_2026-38_hbrcha.jpg",
+  "/images/GYIIF_IYMIA_2026-39_ir7y7a.jpg",
+  "/images/GYIIF_IYMIA_2026-52_iozcqx.jpg",
+  "/images/nsif_2_kood8y.jpg",
+  "/images/nsif_3_dc8pjp.jpg",
 ];
 
 export default class process extends Component {
