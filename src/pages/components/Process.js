@@ -10,8 +10,6 @@ const eventPhotos = [
   "/images/GYIIF_IYMIA_2026-38_hbrcha.jpg",
   "/images/GYIIF_IYMIA_2026-39_ir7y7a.jpg",
   "/images/GYIIF_IYMIA_2026-52_iozcqx.jpg",
-  "/images/nsif_2_kood8y.jpg",
-  "/images/nsif_3_dc8pjp.jpg",
 ];
 
 export default class process extends Component {
