@@ -32,7 +32,7 @@ const PartnerStyle2 = () => {
           >
             <SwiperSlide className="partner-item">
               <Image
-                src="https://res.cloudinary.com/dtik1z1qd/image/upload/v1768892844/Logo_IPB_vlfphd.png"
+                src="/images/partner/Logo_IPB_vlfphd.png"
                 className="img-fluid img-responsive"
                 layout="intrinsic"
                 width={150}
