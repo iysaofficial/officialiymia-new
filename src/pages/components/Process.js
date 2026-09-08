@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { Component } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -110,9 +111,25 @@ export default class process extends Component {
                   marginRight: "8px",
                 }}
               >
-                <img
+                {/*
+                  `next/image`, bukan `<img>`.
+
+                  Slide ini digambar 300x200 piksel, tapi `<img>` menariknya
+                  apa adanya — beberapa megabita per foto, dan semuanya di
+                  halaman depan. Untuk guru dan siswa yang membukanya dari
+                  kuota ponsel, itu tab yang ditutup sebelum isinya sempat
+                  terlihat.
+
+                  `sizes` disebut supaya ia tidak menebak lebar layar penuh
+                  untuk kotak selebar 300px.
+                */}
+                <Image
                   src={src}
-                  alt={`GYIIF IYMIA 2026 - ${i + 1}`}
+                  alt={`IYMIA 2026 - ${i + 1}`}
+                  width={600}
+                  height={400}
+                  sizes="300px"
+                  quality={70}
                   style={{
                     width: "100%",
                     height: "200px",
