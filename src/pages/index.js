@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Navbar from "./components/Navigation";
 import MainBanner from "./components/MainBanner";
+import { ambilIdentitas } from "@/lib/dashboardApi";
 import Footer from "./components/Footer";
 import PartnerStyle2 from "./components/PartnerStyle2";
 import About from "./components/About";
@@ -13,7 +14,7 @@ import Timevenue from "./components/Timevenue";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ identitas }) {
   return (
     <>
       <Head>
@@ -23,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <Navbar />
-      <MainBanner />
+      <MainBanner identitas={identitas} />
       <PartnerStyle2 />
       <About />
       {/* <Timevenue /> */}
@@ -34,4 +35,10 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+/** Identitas edisi ditarik saat halaman dibangun ulang — lima menit, sama
+ *  dengan umur cache API-nya. */
+export async function getStaticProps() {
+  return { props: { identitas: await ambilIdentitas() }, revalidate: 300 };
 }

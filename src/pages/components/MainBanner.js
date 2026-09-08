@@ -2,8 +2,26 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollAnimation from "react-animate-on-scroll";
+import { keadaanPendaftaran } from "@/lib/registrasi";
 
-const MainBanner = () => {
+/**
+ * Spanduk halaman depan.
+ *
+ * ── Kenapa tulisannya tidak lagi dipaku ───────────────────────────────────
+ *
+ * Di sini tertulis "Coming Soon 2027" dua kali, dan tombolnya dimatikan
+ * dengan `pointerEvents: "none"` sambil tetap terlihat seperti tombol — yang
+ * membuat orang mengkliknya berulang lalu menyimpulkan halamannya rusak.
+ * Ketiganya harus disunting programmer tiap kali pendaftaran dibuka.
+ *
+ * Sekarang keadaannya datang dari togel di dasbor, dan tombolnya benar-benar
+ * membawa ke halaman pendaftaran. Bawaannya tetap "Coming Soon" saat API tidak
+ * menjawab: situs yang diam lebih baik daripada situs yang mengundang orang ke
+ * pintu yang belum tentu terbuka.
+ */
+const MainBanner = ({ identitas }) => {
+  const buka = keadaanPendaftaran(identitas) === "buka";
+  const tahun = identitas?.tahun ?? "2027";
   return (
     <>
       <section>
@@ -12,19 +30,17 @@ const MainBanner = () => {
             <div className="row align-items-center">
               <div className="col-lg-5 col-md-12">
                 <div className="banner-wrapper-content">
-                  {/* <span className="sub-title">Coming Soon 2026</span> */}
-                  <span className="sub-title">Coming Soon 2027</span>
+                  <span className="sub-title">
+                    {buka ? `Registration Open ${tahun}` : `Coming Soon ${tahun}`}
+                  </span>
                   <h1>International Young Moslem Inventor Award</h1>
-                  <Link href="/" legacyBehavior>
-                    <a
-                      className="default-btn m-2"
-                      style={{
-                        pointerEvents: "none", // Mematikan fungsi klik
-                        // opacity: 0.5,           // Membuat tombol terlihat pudar
-                        cursor: "not-allowed", // Mengubah kursor saat diarahkan
-                      }}
-                    >
-                      Coming Soon 2027
+                  {/* Tombolnya hidup di kedua keadaan. Yang datang terlalu awal
+                      tetap dibawa ke halaman pendaftaran, dan di sanalah ia
+                      diberi tahu kapan harus kembali — bukan dibiarkan menekan
+                      tombol mati yang tidak menjelaskan apa pun. */}
+                  <Link href="/registration/homeregist" legacyBehavior>
+                    <a className="default-btn m-2">
+                      {buka ? `Register Now ${tahun}` : `Coming Soon ${tahun}`}
                     </a>
                   </Link>
                   {/* <Link
