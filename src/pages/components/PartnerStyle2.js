@@ -42,12 +42,12 @@ const PartnerStyle2 = () => {
             </SwiperSlide>
             <SwiperSlide className="partner-item">
               <Image
-                src="/images/partner/partner4.png"
+                src="/images/partner/iysa.png"
                 className="img-fluid img-responsive"
                 layout="intrinsic"
                 width={300}
                 height={100}
-                alt="BANNER-IMG"
+                alt="IYSA LOGO"
               />
             </SwiperSlide>
           </Swiper>

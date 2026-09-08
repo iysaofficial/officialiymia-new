@@ -236,16 +236,51 @@ const Navigation = () => {
                       </a>
                     </Link>
                   </li>
-                  {/* <li className="nav-item">
-                    <Link
-                      href="https://drive.google.com/file/d/12KOp3B-GrDc1hqY72C8AGAp-FswmCK0Q/view?usp=sharing"
-                      legacyBehavior
-                    >
-                      <a onClick={toggleNavbar} className="nav-link" target="_blank">
-                        Guide Book
+                  <li className="nav-item">
+                    <Link href="#" activeClassName="active" legacyBehavior>
+                      <a onClick={toggleNavbar} className="nav-link">
+                        Guide Book <i className="fa fa-caret-down"></i>
                       </a>
                     </Link>
-                  </li> */}
+                    <ul className="dropdown-menu">
+                      <li className="nav-item">
+                        <Link
+                          href="https://drive.google.com/file/d/1D-Tra_74Au91ARdcQoN40ugS_mCJq_xg/view?usp=sharing"
+                          target="_blank"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a onClick={toggleNavbar} className="nav-link" target="_blank">
+                            Guide Book 2026
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          href="https://drive.google.com/file/d/13t_yRxk73cKPfYTnXab2-G36j6j2jYtl/view?usp=sharing"
+                          target="_blank"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a onClick={toggleNavbar} className="nav-link" target="_blank">
+                            Guide Book 2025
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          href="https://drive.google.com/file/d/1dz9278fbOcl-EAHTKOMi4sHYRBihnQe-/view?usp=sharing"
+                          target="_blank"
+                          activeClassName="active"
+                          legacyBehavior
+                        >
+                          <a onClick={toggleNavbar} className="nav-link" target="_blank">
+                            Guide Book 2024
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
                   <li className="nav-item">
                     <Link href="#" activeClassName="active" legacyBehavior>
                       <a onClick={toggleNavbar} className="nav-link">

@@ -13,7 +13,7 @@ const MainBanner = () => {
               <div className="col-lg-5 col-md-12">
                 <div className="banner-wrapper-content">
                   {/* <span className="sub-title">Coming Soon 2026</span> */}
-                  <span className="sub-title">Coming Soon 2026</span>
+                  <span className="sub-title">Coming Soon 2027</span>
                   <h1>International Young Moslem Inventor Award</h1>
                   <Link href="/" legacyBehavior>
                     <a
@@ -24,7 +24,7 @@ const MainBanner = () => {
                         cursor: "not-allowed", // Mengubah kursor saat diarahkan
                       }}
                     >
-                      Coming Soon 2026
+                      Coming Soon 2027
                     </a>
                   </Link>
                   {/* <Link
