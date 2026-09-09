@@ -99,7 +99,30 @@ export default function HomeRegist({ identitas, keadaanAwal }) {
             {keadaan === "buka" ? (
               <div
                 data-iysa-daftar="iymia"
-                style={{ maxWidth: "44rem", margin: "0 auto", textAlign: "left" }}
+                /*
+                  Bahasa AWAL saja — untuk layar pilihan jalur dan pesan saat
+                  pendaftaran belum dibuka. Situs ini berbahasa Inggris, jadi
+                  yang belum memilih apa pun membaca bahasa yang sama dengan
+                  halaman yang memuatnya.
+
+                  Sesudah jalurnya dipilih, bahasanya ditentukan pilihan itu:
+                  peserta Indonesia membaca formulirnya dalam bahasa Indonesia
+                  meski halaman ini berbahasa Inggris.
+                */
+                data-iysa-bahasa="en"
+                style={{
+                  /*
+                    Hijau IYMIA (`--warna-primary` di globals.css), bukan navy
+                    bawaan IYSA. Custom property satu-satunya hal yang menembus
+                    shadow root formulirnya, dan tanpa ini tombol "Kirim
+                    pendaftaran" berwarna merek yang bukan merek halaman ini.
+                  */
+                  "--iysa-aksen": "#006838",
+                  "--iysa-radius": "10px",
+                  maxWidth: "44rem",
+                  margin: "0 auto",
+                  textAlign: "left",
+                }}
               />
             ) : (
               /*
