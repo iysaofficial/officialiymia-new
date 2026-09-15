@@ -80,10 +80,17 @@ export default function HomeRegist({ identitas, keadaanAwal }) {
                   : `Registration for ${judul}`}
               </h3>
 
-              {/* Tanggalnya disebut apa pun keadaannya. Orang yang datang
-                  terlalu awal perlu tahu kapan harus kembali; yang terlambat
-                  perlu tahu bahwa ia memang terlambat, bukan tersesat. */}
-              {(buka || tutup) && (
+              {/*
+                Tanggalnya disebut hanya saat pendaftarannya BELUM atau SUDAH
+                tutup.
+
+                Yang datang terlalu awal perlu tahu kapan harus kembali; yang
+                terlambat perlu tahu bahwa ia memang terlambat, bukan
+                tersesat. Saat pendaftarannya sedang buka keduanya tidak
+                berlaku: formulirnya ada persis di bawah, dan rentang tanggal
+                di antaranya cuma satu baris yang harus dilewati.
+              */}
+              {keadaan !== "buka" && (buka || tutup) && (
                 <p className="mx-auto mb-4 text-sm md:text-base">
                   {buka && tutup
                     ? `${buka} — ${tutup}`
