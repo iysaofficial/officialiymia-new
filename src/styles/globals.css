@@ -1168,13 +1168,31 @@ textarea.form-control {
 
 /* HOMEREGIST START */
 /* HOMEREGIST START */
+/*
+ * Halaman ini memuat FORMULIR, bukan satu kalimat sambutan.
+ *
+ * Dua nilai yang dulu cocok waktu isinya cuma judul dan tombol, dan jadi salah
+ * begitu formulir pendaftaran ikut dirender di sini:
+ *
+ *   height: 100vh      — tinggi dipatok setinggi layar. Formulirnya jauh lebih
+ *                        tinggi dari itu, jadi isinya meluber keluar kotaknya.
+ *   align-items: center — isi dipusatkan tegak. Pada isi yang lebih tinggi
+ *                        daripada wadahnya, memusatkan berarti mendorong
+ *                        UJUNG ATASNYA ke luar layar — dan judul "REGISTRATION
+ *                        FORM" naik menabrak menu.
+ *
+ * `.navbar-area` berposisi absolute di `top: 0`, jadi bagian atas halaman harus
+ * menyediakan ruang untuknya sendiri. 75px tidak cukup; 10rem yang dipakai
+ * `.registration-section` cukup, dan menyamakannya membuat kedua halaman
+ * pendaftaran berhenti di garis yang sama.
+ */
 .homeregist-section {
-  padding: 75px 25px 75px 25px  ;
-  height: 100vh;
+  padding: 10rem 25px 75px 25px;
+  min-height: 100vh;
   background: var(--warna-tulisan2);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-size: cover;
   background-repeat: no-repeat;
 }
