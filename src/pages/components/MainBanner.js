@@ -19,7 +19,7 @@ import { keadaanPendaftaran } from "@/lib/registrasi";
  * menjawab: situs yang diam lebih baik daripada situs yang mengundang orang ke
  * pintu yang belum tentu terbuka.
  */
-const MainBanner = ({ identitas }) => {
+const MainBanner = ({ identitas, guidebook }) => {
   const buka = keadaanPendaftaran(identitas) === "buka";
   const tahun = identitas?.tahun ?? "2027";
   return (
@@ -43,13 +43,25 @@ const MainBanner = ({ identitas }) => {
                       {buka ? `Register Now ${tahun}` : `Coming Soon ${tahun}`}
                     </a>
                   </Link>
-                  {/* <Link
-                    href="https://drive.google.com/file/d/1nqU4n6oAFpKCkFZ4S_GXT-4boFRWb45f/view?usp=sharing"
-                    legacyBehavior
-                    target="_blank"
-                  >
-                    <a className="default-btn m-2" target="_blank">Guide Book</a>
-                  </Link> */}
+                  {/* Guidebook muncul hanya kalau panitia sudah menerbitkannya
+                      dari dasbor. Dulu tautannya dipaku ke satu berkas Google
+                      Drive dan dikomentari begitu edisinya lewat — jadi ia
+                      selalu tertinggal satu edisi, dan menghidupkannya kembali
+                      menuntut programmer.
+
+                      Tanpa guidebook terbit tombolnya TIDAK ADA, bukan mati:
+                      tombol yang terlihat tapi tidak membawa ke mana pun sudah
+                      pernah membuat orang menyimpulkan halamannya rusak. */}
+                  {guidebook?.url && (
+                    <a
+                      className="default-btn m-2"
+                      href={guidebook.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Guide Book
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="col-lg-7 col-md-12">
