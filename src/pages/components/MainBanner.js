@@ -20,6 +20,34 @@ import { keadaanPendaftaran } from "@/lib/registrasi";
  * pintu yang belum tentu terbuka.
  */
 const MainBanner = ({ identitas, guidebook }) => {
+  /**
+   * Guidebook disegarkan lagi di peramban, bukan hanya saat halaman dibangun.
+   *
+   * Halaman ini statis dengan `revalidate`, jadi tautan yang baru diterbitkan
+   * panitia baru muncul setelah jendela itu lewat DAN ada yang memicu
+   * pembangunan ulangnya — praktisnya beberapa menit, dan yang menunggu
+   * menyimpulkan tombolnya tidak jadi muncul.
+   *
+   * Sekali pengambilan saat halaman terbuka membuat pengunjung berikutnya
+   * selalu melihat keadaan terbaru, tanpa menunggu siapa pun. Gagal mengambil
+   * berarti tetap memakai nilai dari pembangunan — bukan tombol yang hilang.
+   */
+  const [panduan, setPanduan] = React.useState(guidebook ?? null);
+
+  React.useEffect(() => {
+    let hidup = true;
+    (async () => {
+      try {
+        const { ambilGuidebook } = await import("@/lib/dashboardApi");
+        const gb = await ambilGuidebook({ cache: "no-store" });
+        if (hidup) setPanduan(gb ?? null);
+      } catch {
+        /* Dibiarkan: nilai dari pembangunan halaman tetap berlaku. */
+      }
+    })();
+    return () => { hidup = false; };
+  }, []);
+
   const buka = keadaanPendaftaran(identitas) === "buka";
   const tahun = identitas?.tahun ?? "2027";
   return (
@@ -52,10 +80,10 @@ const MainBanner = ({ identitas, guidebook }) => {
                       Tanpa guidebook terbit tombolnya TIDAK ADA, bukan mati:
                       tombol yang terlihat tapi tidak membawa ke mana pun sudah
                       pernah membuat orang menyimpulkan halamannya rusak. */}
-                  {guidebook?.url && (
+                  {panduan?.url && (
                     <a
                       className="default-btn m-2"
-                      href={guidebook.url}
+                      href={panduan.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

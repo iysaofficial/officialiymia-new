@@ -43,5 +43,9 @@ export async function getStaticProps() {
   /* Keduanya diambil berbarengan — dua panggilan berurutan menambah tunggu
      tanpa alasan, dan yang satu tidak bergantung hasil yang lain. */
   const [identitas, guidebook] = await Promise.all([ambilIdentitas(), ambilGuidebook()]);
-  return { props: { identitas, guidebook }, revalidate: 300 };
+  /* Satu menit, bukan lima. Yang paling sering ditunggu sesudah panitia
+     menekan "Terbitkan ke situs" adalah tombol Guidebook di spanduk ini; lima
+     menit terasa seperti tidak terjadi apa-apa. Spanduk juga menyegarkan
+     dirinya sendiri di peramban — lihat `MainBanner`. */
+  return { props: { identitas, guidebook }, revalidate: 60 };
 }
