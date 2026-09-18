@@ -7,6 +7,36 @@ import Image from "next/image";
 const Navigation = () => {
   const [menu, setMenu] = React.useState(true);
 
+  /**
+   * Guidebook edisi berjalan, diambil dari dasbor.
+   *
+   * Butir di bawahnya ditulis tangan satu per satu tiap tahun — 2026, 2025,
+   * 2024, masing-masing tautan Google Drive. Edisi 2027 sudah diterbitkan
+   * panitia lewat dasbor dan tautannya sudah tayang di spanduk halaman depan,
+   * tapi menu ini tidak tahu apa-apa soal itu: ia baru berubah kalau ada yang
+   * menyuntingnya dan men-deploy situsnya lagi. Yang mencari panduan lewat menu
+   * karena itu menemukan tahun lalu sebagai yang terbaru.
+   *
+   * Diambil di peramban, bukan saat membangun halaman: menu ini dipakai semua
+   * halaman, dan sebagiannya statis tanpa `getStaticProps`. Gagal mengambil
+   * berarti menu kembali seperti sekarang — bukan menu yang kosong.
+   */
+  const [panduanTerbit, setPanduanTerbit] = React.useState(null);
+
+  React.useEffect(() => {
+    let hidup = true;
+    (async () => {
+      try {
+        const { ambilGuidebook, ambilIdentitas } = await import("@/lib/dashboardApi");
+        const [gb, id] = await Promise.all([ambilGuidebook(), ambilIdentitas()]);
+        if (hidup && gb?.url) setPanduanTerbit({ url: gb.url, tahun: id?.tahun ?? "" });
+      } catch {
+        /* Dibiarkan: menu tetap memuat edisi-edisi lama. */
+      }
+    })();
+    return () => { hidup = false; };
+  }, []);
+
   const toggleNavbar = () => {
     setMenu(!menu);
   };
@@ -243,6 +273,15 @@ const Navigation = () => {
                       </a>
                     </Link>
                     <ul className="dropdown-menu">
+                      {panduanTerbit && (
+                        <li className="nav-item">
+                          <Link href={panduanTerbit.url} target="_blank" activeClassName="active" legacyBehavior>
+                            <a onClick={toggleNavbar} className="nav-link" target="_blank">
+                              Guide Book {panduanTerbit.tahun}
+                            </a>
+                          </Link>
+                        </li>
+                      )}
                       <li className="nav-item">
                         <Link
                           href="https://drive.google.com/file/d/1D-Tra_74Au91ARdcQoN40ugS_mCJq_xg/view?usp=sharing"
