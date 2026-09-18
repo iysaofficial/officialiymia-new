@@ -168,6 +168,8 @@ export async function getStaticProps() {
   const identitas = await ambilIdentitas();
   return {
     props: { identitas, keadaanAwal: keadaanPendaftaran(identitas) },
-    revalidate: 300,
+    /* Satu menit: togel buka/tutup pendaftaran ada di sini, dan panitia yang
+       menekannya di dasbor menunggu halaman ini berubah. */
+    revalidate: 60,
   };
 }

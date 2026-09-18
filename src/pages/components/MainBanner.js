@@ -33,14 +33,23 @@ const MainBanner = ({ identitas, guidebook }) => {
    * berarti tetap memakai nilai dari pembangunan — bukan tombol yang hilang.
    */
   const [panduan, setPanduan] = React.useState(guidebook ?? null);
+  /* Sakelar buka/tutup pendaftaran ikut disegarkan: ia dibaca dari `identitas`
+     yang juga dibekukan saat halaman dibangun, dan panitia yang menekan
+     togelnya di dasbor menunggu perubahan yang sama lamanya. */
+  const [identitasKini, setIdentitasKini] = React.useState(identitas ?? null);
 
   React.useEffect(() => {
     let hidup = true;
     (async () => {
       try {
-        const { ambilGuidebook } = await import("@/lib/dashboardApi");
-        const gb = await ambilGuidebook({ cache: "no-store" });
-        if (hidup) setPanduan(gb ?? null);
+        const { ambilGuidebook, ambilIdentitas } = await import("@/lib/dashboardApi");
+        const [gb, id] = await Promise.all([
+          ambilGuidebook({ cache: "no-store" }),
+          ambilIdentitas({ cache: "no-store" }),
+        ]);
+        if (!hidup) return;
+        setPanduan(gb ?? null);
+        if (id) setIdentitasKini(id);
       } catch {
         /* Dibiarkan: nilai dari pembangunan halaman tetap berlaku. */
       }
@@ -48,8 +57,8 @@ const MainBanner = ({ identitas, guidebook }) => {
     return () => { hidup = false; };
   }, []);
 
-  const buka = keadaanPendaftaran(identitas) === "buka";
-  const tahun = identitas?.tahun ?? "2027";
+  const buka = keadaanPendaftaran(identitasKini) === "buka";
+  const tahun = identitasKini?.tahun ?? "2027";
   return (
     <>
       <section>
