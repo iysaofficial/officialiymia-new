@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const SERI_PANDUAN = process.env.NEXT_PUBLIC_IYSA_SERIES ?? "IYMIA";
+
 const Navigation = () => {
   const [menu, setMenu] = React.useState(true);
 
@@ -276,12 +278,18 @@ const Navigation = () => {
                       {panduanTerbit && (
                         <li className="nav-item">
                           <Link href={panduanTerbit.url} target="_blank" activeClassName="active" legacyBehavior>
-                            <a onClick={toggleNavbar} className="nav-link" target="_blank">
+                            <a onClick={toggleNavbar} className="nav-link" target="_blank" data-iysa-panduan={SERI_PANDUAN}>
                               Guide Book {panduanTerbit.tahun}
                             </a>
                           </Link>
                         </li>
                       )}
+                      {/* Syarat & Ketentuan resmi IYSA (Master Data dasbor) — modal panduan. */}
+                      <li className="nav-item">
+                        <a onClick={toggleNavbar} className="nav-link" href="#terms-and-conditions" data-iysa-panduan={SERI_PANDUAN} data-iysa-panduan-jenis="tnc">
+                          Terms &amp; Conditions
+                        </a>
+                      </li>
                       <li className="nav-item">
                         <Link
                           href="https://drive.google.com/file/d/1D-Tra_74Au91ARdcQoN40ugS_mCJq_xg/view?usp=sharing"

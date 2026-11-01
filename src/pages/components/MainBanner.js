@@ -19,6 +19,8 @@ import { keadaanPendaftaran } from "@/lib/registrasi";
  * menjawab: situs yang diam lebih baik daripada situs yang mengundang orang ke
  * pintu yang belum tentu terbuka.
  */
+const SERI_PANDUAN = process.env.NEXT_PUBLIC_IYSA_SERIES ?? "IYMIA";
+
 const MainBanner = ({ identitas, guidebook }) => {
   /**
    * Guidebook disegarkan lagi di peramban, bukan hanya saat halaman dibangun.
@@ -95,6 +97,9 @@ const MainBanner = ({ identitas, guidebook }) => {
                       href={panduan.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      /* Membuka modal panduan IYSA (embed/panduan.js); tanpa
+                         skripnya href tetap membuka PDF guidebook langsung. */
+                      data-iysa-panduan={SERI_PANDUAN}
                     >
                       Guide Book
                     </a>

@@ -65,6 +65,10 @@ export default function Document() {
           data-iysa-kurasi="iymia"
           defer
         />
+        {/* Modal panduan IYSA — Guidebook + Syarat & Ketentuan dengan pratinjau,
+            unduh, dan buka di tab baru. Tombol ber-`data-iysa-panduan` membukanya;
+            tanpa skrip ini tautannya tetap membuka PDF langsung. */}
+        <script src="https://api-dashboard.iysa.or.id/embed/panduan.js" defer />
       </body>
     </Html>
   );
